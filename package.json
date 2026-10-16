@@ -1,0 +1,16 @@
+{
+  "name": "qa-playwright-automation",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:test": "node server.mjs",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^22.15.30",
+    "typescript": "^5.8.3"
+  }
+}
