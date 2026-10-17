@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start:test": "node server.mjs",
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:report": "playwright show-report"

@@ -3,9 +3,9 @@
 [![Playwright](https://img.shields.io/badge/Playwright-tested-45ba4b?logo=playwright&logoColor=white)](https://playwright.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-A minimal Playwright + TypeScript project with a local login demo. Playwright
-starts the test app automatically, so the end-to-end test does not depend on an
-external website or network availability.
+A minimal Playwright + TypeScript project with a login test for the public
+[Sauce Demo](https://www.saucedemo.com/) sandbox. Running the test requires
+internet access.
 
 ## Getting started
 
@@ -21,8 +21,7 @@ To run the test with the browser visible (headed mode):
 npm run test:headed
 ```
 
-To view the HTML report after a run, use `npm run test:report`. To start the
-demo manually, run `npm run start:test` and open <http://127.0.0.1:4173/login>.
+To view the HTML report after a run, use `npm run test:report`.
 
-The sample test uses the local demo credentials (`tomsmith` /
-`SuperSecretPassword`) and verifies both login and logout.
+The test uses Sauce Demo's standard sandbox credentials (`standard_user` /
+`secret_sauce`) and verifies that the products page loads after login.
