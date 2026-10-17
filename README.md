@@ -1,5 +1,6 @@
 # Playwright QA automation
 
+[![Playwright Tests](https://github.com/OWNER/REPO/actions/workflows/playwright.yml/badge.svg)](https://github.com/cmsrrent/REPO/actions/workflows/playwright.yml)
 [![Playwright](https://img.shields.io/badge/Playwright-tested-45ba4b?logo=playwright&logoColor=white)](https://playwright.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
