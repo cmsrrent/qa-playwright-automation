@@ -19,6 +19,33 @@ test('shows an error when submitting the login form empty', async ({ page }) => 
   await expect(page.getByRole('alert')).toContainText('Epic sadface: Username is required');
 });
 
+test('shows an error when the username is missing', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await loginPage.goto();
+  await loginPage.login('', 'secret_sauce');
+
+  await expect(page.getByRole('alert')).toContainText('Epic sadface: Username is required');
+});
+
+test('shows an error when the password is missing', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await loginPage.goto();
+  await loginPage.login('standard_user', '');
+
+  await expect(page.getByRole('alert')).toContainText('Epic sadface: Password is required');
+});
+
+test('rejects a locked-out user', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await loginPage.goto();
+  await loginPage.login('locked_out_user', 'secret_sauce');
+
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByRole('alert')).toContainText(
+    'Epic sadface: Sorry, this user has been locked out.',
+  );
+});
+
 test('rejects a valid username with an invalid password', async ({ page }) => {
   const loginPage = new LoginPage(page);
   await loginPage.goto();
